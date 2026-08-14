@@ -1,4 +1,4 @@
-# 0xSidsploitx
+﻿# 0xSidsploitx
 
 Offensive Security Consultant. 5+ years across web, network, Active Directory, and API environments — primarily banking and financial sector.
 
@@ -46,7 +46,7 @@ Security research, methodology breakdowns, and tooling notes at **[sidesploitx.g
   <tr>
     <td align="center" width="180">
       <a href="https://www.offsec.com/">
-        <img src="https://www.offsec.com/_astro/OSCP_.NR8EQz30_1gKtQy.svg" width="120" alt="OSCP+"/>
+        <img src="assets/oscp.svg" width="120" alt="OSCP+"/>
       </a>
       <br/>
       <sub><b>OSCP+</b></sub>
@@ -55,7 +55,7 @@ Security research, methodology breakdowns, and tooling notes at **[sidesploitx.g
     </td>
     <td align="center" width="180">
       <a href="https://www.alteredsecurity.com/adlab">
-        <img src="https://static.wixstatic.com/media/470c31_4748c4b9510b46bf846213dfc86efb4f~mv2.png/v1/fill/w_332,h_392,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/defense2.png" width="90" alt="CRTP"/>
+        <img src="assets/crtp.png" width="90" alt="CRTP"/>
       </a>
       <br/>
       <sub><b>CRTP</b></sub>
@@ -64,21 +64,12 @@ Security research, methodology breakdowns, and tooling notes at **[sidesploitx.g
     </td>
     <td align="center" width="180">
       <a href="https://certifications.tcm-sec.com/">
-        <img src="https://images.credly.com/size/340x340/images/1a2f9a53-4e41-4f5f-97e9-2f0bcc1490f4/image.png" width="100" alt="PNPT"/>
+        <img src="assets/pnpt.webp" width="100" alt="PNPT"/>
       </a>
       <br/>
       <sub><b>PNPT</b></sub>
       <br/>
       <sub>TCM Security</sub>
-    </td>
-    <td align="center" width="180">
-      <a href="https://www.comptia.org/certifications/pentest">
-        <img src="https://images.credly.com/size/340x340/images/bc08972c-3c7d-4b99-82a0-c94bcca36674/image.png" width="100" alt="PenTest+"/>
-      </a>
-      <br/>
-      <sub><b>CompTIA PenTest+</b></sub>
-      <br/>
-      <sub>CompTIA</sub>
     </td>
   </tr>
 </table>
