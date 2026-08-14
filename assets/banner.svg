@@ -1,0 +1,22 @@
+<svg width="100%" viewBox="0 0 680 180" role="img" xmlns="http://www.w3.org/2000/svg">
+<rect width="680" height="180" rx="6" fill="#0d0f14"/>
+<rect x="0" y="0" width="3" height="180" fill="#00d4aa"/>
+<rect x="40" y="28" width="8" height="8" rx="2" fill="#ff4d6a"/>
+<rect x="56" y="28" width="8" height="8" rx="2" fill="#eab308"/>
+<rect x="72" y="28" width="8" height="8" rx="2" fill="#00d4aa"/>
+<line x1="40" y1="50" x2="640" y2="50" stroke="#1a1e2a" stroke-width="1"/>
+<text x="40" y="44" font-family="'Courier New', monospace" font-size="11" fill="#3d4a5c">terminal — bash — 80x24</text>
+<text x="40" y="85" font-family="'Courier New', monospace" font-size="13" fill="#3d4a5c">$</text>
+<text x="55" y="85" font-family="'Courier New', monospace" font-size="13" fill="#00d4aa">whoami</text>
+<text x="40" y="122" font-family="'Courier New', monospace" font-size="36" font-weight="700" fill="#ffffff" letter-spacing="-1">0x</text>
+<text x="92" y="122" font-family="'Courier New', monospace" font-size="36" font-weight="700" fill="#00d4aa" letter-spacing="-1">Sidsploitx</text>
+<text x="40" y="148" font-family="'Courier New', monospace" font-size="12" fill="#3d4a5c">offensive security consultant</text>
+<text x="300" y="148" font-family="'Courier New', monospace" font-size="12" fill="#1a2e2a">·</text>
+<text x="316" y="148" font-family="'Courier New', monospace" font-size="12" fill="#3d4a5c">oscp+</text>
+<text x="358" y="148" font-family="'Courier New', monospace" font-size="12" fill="#1a2e2a">·</text>
+<text x="374" y="148" font-family="'Courier New', monospace" font-size="12" fill="#3d4a5c">crtp</text>
+<text x="406" y="148" font-family="'Courier New', monospace" font-size="12" fill="#1a2e2a">·</text>
+<text x="422" y="148" font-family="'Courier New', monospace" font-size="12" fill="#3d4a5c">pnpt</text>
+<rect x="580" y="108" width="60" height="22" rx="3" fill="#0a1f1a" stroke="#00d4aa" stroke-width="0.5"/>
+<text x="610" y="123" font-family="'Courier New', monospace" font-size="11" fill="#00d4aa" text-anchor="middle">OSCP+</text>
+</svg>
