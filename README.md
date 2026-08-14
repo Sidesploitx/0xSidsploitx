@@ -1,8 +1,9 @@
-﻿# 0xSidsploitx
+![banner](assets/banner.svg)
 
-Offensive Security Consultant. 5+ years across web, network, Active Directory, and API environments — primarily banking and financial sector.
+ # 0xSidsploitx
 
-🔗 **[Blog](https://sidesploitx.github.io/0xSidsploitx)** · **[LinkedIn](https://linkedin.com)**
+
+🔗 **[Blog](https://sidesploitx.github.io/0xSidsploitx)** 
 
 ---
 
