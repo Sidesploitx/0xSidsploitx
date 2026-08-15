@@ -31,17 +31,9 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    min-height: 100vh;
-  }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; }
   a { color: inherit; text-decoration: none; }
 
-  /* ── NAV ── */
   nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(13,15,20,0.92);
@@ -51,407 +43,207 @@
     display: flex; align-items: center; justify-content: space-between;
     height: 56px;
   }
-  .nav-brand {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 17px; font-weight: 700;
-    color: var(--accent);
-    letter-spacing: -0.5px;
-  }
+  .nav-brand { font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; }
   .nav-brand span { color: var(--muted2); }
   .nav-links { display: flex; gap: 2rem; }
-  .nav-links a {
-    font-size: 13px; font-weight: 500;
-    color: var(--muted2);
-    letter-spacing: 0.02em;
-    transition: color 0.2s;
-  }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted2); letter-spacing: 0.02em; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
   .nav-right { display: flex; align-items: center; gap: 1rem; }
-  .nav-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; font-weight: 500;
-    background: rgba(0,212,170,0.1);
-    color: var(--accent);
-    border: 1px solid rgba(0,212,170,0.25);
-    border-radius: 4px;
-    padding: 2px 8px;
+  .star-btn {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+    background: rgba(0,212,170,0.08); color: var(--accent);
+    border: 1px solid rgba(0,212,170,0.3); border-radius: 4px;
+    padding: 4px 12px; cursor: pointer; transition: all 0.2s;
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
   }
+  .star-btn:hover { background: rgba(0,212,170,0.15); }
 
-  /* ── HERO ── */
-  .hero {
-    max-width: 860px; margin: 0 auto;
-    padding: 5rem 2rem 3rem;
-  }
-  .hero-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; font-weight: 400;
-    color: var(--accent);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-  }
+  .hero { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 3rem; }
+  .hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 400; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2rem; }
   .hero-eyebrow::before { content: '> '; color: var(--muted); }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--accent);
-  }
-  .hero-desc {
-    font-size: 16px;
-    color: var(--muted2);
-    max-width: 560px;
-    line-height: 1.75;
-    margin-bottom: 2rem;
-  }
-  .hero-stats {
-    display: flex; gap: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-  }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.03em; color: var(--text); margin-bottom: 1rem; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero-desc { font-size: 16px; color: var(--muted2); max-width: 560px; line-height: 1.75; margin-bottom: 2rem; }
+  .hero-stats { display: flex; gap: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
   .stat-item { display: flex; flex-direction: column; gap: 2px; }
-  .stat-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 22px; font-weight: 700;
-    color: var(--text);
-  }
+  .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--text); }
   .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
 
-  /* ── FILTER BAR ── */
-  .filter-bar {
+  .star-callout {
     max-width: 860px; margin: 0 auto;
-    padding: 0 2rem 2rem;
-    display: flex; gap: 8px; flex-wrap: wrap;
+    padding: 0 2rem 1.5rem;
   }
-  .filter-btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; font-weight: 500;
+  .star-callout-inner {
     background: var(--bg2);
-    border: 1px solid var(--border2);
-    color: var(--muted2);
-    border-radius: 4px;
-    padding: 5px 12px;
-    cursor: pointer;
-    transition: all 0.15s;
+    border: 1px solid rgba(0,212,170,0.2);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    flex-wrap: wrap;
   }
-  .filter-btn:hover, .filter-btn.active {
-    background: rgba(0,212,170,0.1);
-    border-color: rgba(0,212,170,0.35);
-    color: var(--accent);
-  }
+  .star-callout-text { font-size: 13px; color: var(--muted2); }
+  .star-callout-text span { color: var(--accent); font-family: 'JetBrains Mono', monospace; }
 
-  /* ── MAIN LAYOUT ── */
-  .main {
-    max-width: 860px; margin: 0 auto;
-    padding: 0 2rem 6rem;
-  }
+  .filter-bar { max-width: 860px; margin: 0 auto; padding: 0 2rem 2rem; display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-btn { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; background: var(--bg2); border: 1px solid var(--border2); color: var(--muted2); border-radius: 4px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; }
+  .filter-btn:hover, .filter-btn.active { background: rgba(0,212,170,0.1); border-color: rgba(0,212,170,0.35); color: var(--accent); }
 
-  /* ── FEATURED POST ── */
-  .featured-post {
-    background: var(--bg2);
-    border: 1px solid var(--border2);
-    border-radius: 10px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.2s;
-    cursor: pointer;
-  }
-  .featured-post::before {
-    content: '';
-    position: absolute; top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: var(--accent);
-  }
+  .main { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+
+  .featured-post { background: var(--bg2); border: 1px solid var(--border2); border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; transition: border-color 0.2s; cursor: pointer; }
+  .featured-post::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--accent); }
   .featured-post:hover { border-color: var(--accent); }
-  .featured-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-  .featured-post h2 {
-    font-size: 20px; font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-bottom: 0.6rem;
-    line-height: 1.3;
-  }
-  .featured-post .excerpt {
-    font-size: 14px; color: var(--muted2);
-    line-height: 1.7; margin-bottom: 1.25rem;
-  }
-  .post-meta {
-    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-  }
-  .tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; font-weight: 500;
-    border-radius: 3px;
-    padding: 2px 8px;
-  }
+  .featured-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .featured-post h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin-bottom: 0.6rem; line-height: 1.3; }
+  .featured-post .excerpt { font-size: 14px; color: var(--muted2); line-height: 1.7; margin-bottom: 1.25rem; }
+  .post-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; border-radius: 3px; padding: 2px 8px; }
   .tag-web { background: var(--tag-web); color: var(--tag-web-t); }
   .tag-ad { background: var(--tag-ad); color: var(--tag-ad-t); }
   .tag-api { background: var(--tag-api); color: var(--tag-api-t); }
   .tag-research { background: var(--tag-research); color: var(--tag-research-t); border: 1px solid var(--border2); }
   .tag-tools { background: var(--tag-tools); color: var(--tag-tools-t); }
-  .meta-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: var(--muted);
-  }
+  .meta-date { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
   .meta-read { font-size: 12px; color: var(--muted); margin-left: auto; }
 
-  /* ── POST GRID ── */
-  .post-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  .post-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.4rem;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    display: flex; flex-direction: column;
-  }
-  .post-card:hover {
-    border-color: var(--border2);
-    background: var(--bg3);
-  }
-  .card-severity {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 0.75rem;
-  }
+  .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+  .post-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; cursor: pointer; transition: border-color 0.2s, background 0.2s; display: flex; flex-direction: column; }
+  .post-card:hover { border-color: var(--border2); background: var(--bg3); }
+  .card-severity { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
   .sev-critical { color: var(--accent3); }
   .sev-high { color: #f97316; }
   .sev-medium { color: #eab308; }
   .sev-info { color: var(--accent2); }
-  .post-card h3 {
-    font-size: 15px; font-weight: 500;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-  }
-  .post-card p {
-    font-size: 13px; color: var(--muted2);
-    line-height: 1.6;
-    flex: 1;
-    margin-bottom: 1rem;
-  }
+  .post-card h3 { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
+  .post-card p { font-size: 13px; color: var(--muted2); line-height: 1.6; flex: 1; margin-bottom: 1rem; }
 
-  /* ── TOOLS SECTION ── */
-  .section-header {
-    display: flex; align-items: center; gap: 12px;
-    margin: 3rem 0 1.25rem;
-  }
-  .section-header h2 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted);
-  }
-  .section-header::after {
-    content: ''; flex: 1;
-    height: 1px; background: var(--border);
-  }
+  .section-header { display: flex; align-items: center; gap: 12px; margin: 3rem 0 1.25rem; }
+  .section-header h2 { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .section-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-  /* ── TOOL CARDS ── */
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1rem;
-  }
-  .tool-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem;
-    transition: border-color 0.2s;
-  }
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .tool-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; transition: border-color 0.2s; }
   .tool-card:hover { border-color: var(--border2); }
-  .tool-header {
-    display: flex; align-items: center; gap: 10px;
-    margin-bottom: 0.6rem;
-  }
-  .tool-icon {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 18px;
-    width: 36px; height: 36px;
-    background: var(--bg3);
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    border: 1px solid var(--border2);
-  }
-  .tool-name {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px; font-weight: 500;
-    color: var(--accent);
-  }
+  .tool-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.6rem; }
+  .tool-icon { font-family: 'JetBrains Mono', monospace; font-size: 18px; width: 36px; height: 36px; background: var(--bg3); border-radius: 6px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border2); }
+  .tool-name { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; color: var(--accent); }
   .tool-desc { font-size: 13px; color: var(--muted2); line-height: 1.55; }
 
-  /* ── NEWSLETTER ── */
-  .newsletter {
-    background: var(--bg2);
-    border: 1px solid var(--border2);
-    border-radius: 10px;
-    padding: 2rem;
-    margin-top: 3rem;
-    text-align: center;
-  }
-  .newsletter h3 {
-    font-size: 18px; font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  .newsletter p {
-    font-size: 14px; color: var(--muted2);
-    margin-bottom: 1.25rem;
-  }
-  .newsletter-form {
-    display: flex; gap: 8px;
-    max-width: 400px; margin: 0 auto;
-  }
-  .newsletter-form input {
-    flex: 1;
-    background: var(--bg3);
-    border: 1px solid var(--border2);
-    border-radius: 5px;
-    color: var(--text);
-    font-size: 14px;
-    padding: 8px 12px;
-    font-family: 'Inter', sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
-  }
+  .newsletter { background: var(--bg2); border: 1px solid var(--border2); border-radius: 10px; padding: 2rem; margin-top: 3rem; text-align: center; }
+  .newsletter h3 { font-size: 18px; font-weight: 500; margin-bottom: 0.5rem; }
+  .newsletter p { font-size: 14px; color: var(--muted2); margin-bottom: 1.25rem; }
+  .newsletter-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
+  .newsletter-form input { flex: 1; background: var(--bg3); border: 1px solid var(--border2); border-radius: 5px; color: var(--text); font-size: 14px; padding: 8px 12px; font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s; }
   .newsletter-form input:focus { border-color: var(--accent); }
   .newsletter-form input::placeholder { color: var(--muted); }
-  .btn-sub {
-    background: var(--accent);
-    color: #0d0f14;
-    font-weight: 600;
-    font-size: 13px;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 18px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.2s;
-    font-family: 'Inter', sans-serif;
-  }
+  .btn-sub { background: var(--accent); color: #0d0f14; font-weight: 600; font-size: 13px; border: none; border-radius: 5px; padding: 8px 18px; cursor: pointer; white-space: nowrap; transition: opacity 0.2s; font-family: 'Inter', sans-serif; }
   .btn-sub:hover { opacity: 0.85; }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    text-align: center;
-  }
-  footer p {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; color: var(--muted);
-  }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
+  footer p { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
   footer span { color: var(--accent); }
 
-  /* ── ARTICLE VIEW ── */
-  .article-view {
-    display: none;
-    max-width: 720px; margin: 0 auto;
-    padding: 0 2rem 6rem;
-  }
+  .article-view { display: none; max-width: 720px; margin: 0 auto; padding: 0 2rem 6rem; }
   .article-view.active { display: block; }
-  .back-btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; color: var(--muted2);
-    background: none; border: none;
-    cursor: pointer; display: flex; align-items: center; gap: 6px;
-    padding: 0; margin-bottom: 2rem;
-    transition: color 0.2s;
-  }
+  .back-btn { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted2); background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 0; margin-bottom: 2rem; transition: color 0.2s; }
   .back-btn:hover { color: var(--accent); }
   .article-header { margin-bottom: 2.5rem; }
-  .article-header h1 {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-    font-weight: 600; letter-spacing: -0.03em;
-    line-height: 1.2; margin-bottom: 1rem;
-  }
-  .article-meta {
-    display: flex; flex-wrap: wrap;
-    align-items: center; gap: 10px;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 2rem;
-  }
+  .article-header h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1rem; }
+  .article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
   .article-body { font-size: 15px; line-height: 1.85; color: var(--muted2); }
-  .article-body h2 {
-    font-size: 18px; font-weight: 600;
-    color: var(--text); margin: 2.5rem 0 0.75rem;
-    letter-spacing: -0.02em;
-  }
-  .article-body h3 {
-    font-size: 15px; font-weight: 500;
-    color: var(--text); margin: 1.5rem 0 0.5rem;
-  }
+  .article-body h2 { font-size: 18px; font-weight: 600; color: var(--text); margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em; }
+  .article-body h3 { font-size: 15px; font-weight: 500; color: var(--text); margin: 1.5rem 0 0.5rem; }
   .article-body p { margin-bottom: 1.2rem; }
-  .article-body code {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    background: var(--bg3);
-    border: 1px solid var(--border2);
-    border-radius: 3px;
-    padding: 1px 5px;
-    color: var(--accent);
-  }
-  .article-body pre {
-    background: var(--bg2);
-    border: 1px solid var(--border2);
-    border-radius: 8px;
-    padding: 1.25rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-  }
-  .article-body pre code {
-    background: none; border: none;
-    padding: 0; font-size: 13px;
-    color: var(--text); line-height: 1.7;
-  }
-  .article-body ul, .article-body ol {
-    padding-left: 1.5rem; margin-bottom: 1.2rem;
-  }
+  .article-body code { font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--bg3); border: 1px solid var(--border2); border-radius: 3px; padding: 1px 5px; color: var(--accent); }
+  .article-body pre { background: var(--bg2); border: 1px solid var(--border2); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; }
+  .article-body pre code { background: none; border: none; padding: 0; font-size: 13px; color: var(--text); line-height: 1.7; }
+  .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
   .article-body li { margin-bottom: 0.4rem; }
   .article-body strong { color: var(--text); font-weight: 500; }
   .article-body a { color: var(--accent); border-bottom: 1px solid rgba(0,212,170,0.3); }
-  .callout {
-    background: var(--bg3);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 6px 6px 0;
-    padding: 1rem 1.25rem;
-    margin: 1.5rem 0;
-    font-size: 14px;
+  .callout { background: var(--bg3); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 14px; }
+  .callout-warn { border-color: var(--accent3); background: rgba(255,77,106,0.05); }
+
+
+  /* ── HERO BG ── */
+  .hero-bg-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
   }
-  .callout-warn {
-    border-color: var(--accent3);
-    background: rgba(255,77,106,0.05);
+  .hero-bg-art {
+    position: absolute; inset: 0;
+    background-image: url('assets/avatar.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    filter: blur(18px) saturate(0.6) brightness(0.25);
+    transform: scale(1.08);
+    z-index: 0;
+  }
+  .hero-bg-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(13,15,20,0.55) 0%,
+      rgba(13,15,20,0.75) 60%,
+      rgba(13,15,20,1) 100%
+    );
+    z-index: 1;
+  }
+  .hero { position: relative; z-index: 2; }
+  .hero-profile-row {
+    display: flex; align-items: center; gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .hero-avatar-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .hero-avatar {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    position: relative; z-index: 2;
+    border: 2px solid rgba(0,212,170,0.6);
+  }
+  .avatar-ring {
+    position: absolute; inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,212,170,0.2);
+    z-index: 1;
+    animation: pulse-ring 3s ease-in-out infinite;
+  }
+  @keyframes pulse-ring {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.04); }
+  }
+  .hero-identity { flex: 1; min-width: 260px; }
+  .hero-identity h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700; letter-spacing: -0.03em;
+    line-height: 1.1; margin-bottom: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .hero-cert-row {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+  .cert-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    background: rgba(0,212,170,0.08);
+    color: var(--accent);
+    border: 1px solid rgba(0,212,170,0.25);
+    border-radius: 4px;
+    padding: 3px 10px;
+    letter-spacing: 0.04em;
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
     .post-grid { grid-template-columns: 1fr; }
     .tools-grid { grid-template-columns: 1fr; }
-    .hero-stats { gap: 1.5rem; }
+    .hero-profile-row { flex-direction: column; align-items: flex-start; }
     .nav-links { display: none; }
     .newsletter-form { flex-direction: column; }
   }
@@ -467,30 +259,41 @@
     <a href="#about">About</a>
   </div>
   <div class="nav-right">
-    <span class="nav-badge">OSCP+</span>
+    <a class="star-btn" href="https://github.com/Sidesploitx/0xSidsploitx" target="_blank">⭐ Star on GitHub</a>
   </div>
 </nav>
 
-<!-- ── HOME VIEW ── -->
 <div id="home-view">
-  <div class="hero">
-    <div class="hero-eyebrow">offensive security research & findings</div>
-    <h1>Breaking things to<br><em>understand them better.</em></h1>
-    <p class="hero-desc">Real-world vulnerability research, penetration testing methodology, CTF write-ups, and tooling notes. Written for people who learn by doing.</p>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num">5+</span>
-        <span class="stat-label">years offensive sec</span>
+  <!-- HERO WITH BACKGROUND ART -->
+  <div class="hero-bg-wrapper">
+    <div class="hero-bg-art"></div>
+    <div class="hero-bg-overlay"></div>
+    <div class="hero">
+      <div class="hero-profile-row">
+        <div class="hero-avatar-wrap">
+          <img src="assets/avatar.jpg" alt="0xSidsploitx" class="hero-avatar"/>
+          <div class="avatar-ring"></div>
+        </div>
+        <div class="hero-identity">
+          <div class="hero-eyebrow">offensive security research & findings</div>
+          <h1>0x<em>Sidsploitx</em></h1>
+          <p class="hero-desc">Real-world penetration testing methodology, tooling write-ups, and findings. Written for people who learn by doing.</p>
+          <div class="hero-cert-row">
+            <span class="cert-badge">OSCP+</span>
+            <span class="cert-badge">CRTP</span>
+            <span class="cert-badge">PNPT</span>
+            <span class="cert-badge">5+ yrs</span>
+            <span class="cert-badge">Banking &amp; Fintech</span>
+          </div>
+        </div>
       </div>
-      <div class="stat-item">
-        <span class="stat-num">4</span>
-        <span class="stat-label">CVEs disclosed</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">OSCP+</span>
-        <span class="stat-label">CRTP · PNPT</span>
-      </div>
+    </div>
+  </div>
 
+  <div class="star-callout">
+    <div class="star-callout-inner">
+      <p class="star-callout-text">If this research helps you — <span>⭐ star the repo</span> on GitHub. It helps others find it too.</p>
+      <a class="star-btn" href="https://github.com/Sidesploitx/0xSidsploitx" target="_blank">⭐ Star on GitHub</a>
     </div>
   </div>
 
@@ -498,92 +301,47 @@
     <button class="filter-btn active" onclick="filterPosts('all', this)">All</button>
     <button class="filter-btn" onclick="filterPosts('web', this)">Web App</button>
     <button class="filter-btn" onclick="filterPosts('ad', this)">Active Directory</button>
-    <button class="filter-btn" onclick="filterPosts('api', this)">API / JWT</button>
     <button class="filter-btn" onclick="filterPosts('tools', this)">Tools</button>
-    <button class="filter-btn" onclick="filterPosts('research', this)">Research</button>
   </div>
 
   <div class="main">
 
-    <!-- FEATURED -->
-    <div class="featured-post" data-cat="ad" onclick="openArticle('bloodhound-101')">
+    <div class="featured-post" data-cat="tools" onclick="openArticle('phantom-script')">
       <div class="featured-label">★ Featured</div>
-      <h2>BloodHound for Beginners: Mapping Active Directory Attack Paths</h2>
-      <p class="excerpt">BloodHound turns a complex AD environment into a graph you can reason about. Here's how I set it up, collect data with SharpHound, and find the shortest paths to Domain Admin — with real examples from lab environments.</p>
+      <h2>phantom.sh — Automated Recon That Actually Works in Real Assessments</h2>
+      <p class="excerpt">Most pentesters run the same tools in the same order manually. phantom.sh automates that entire pipeline — port discovery, service fingerprinting, HTTP probing, subdomain enumeration — into a single command. Here's how it works, why I built it, and how it changes the way I approach every assessment.</p>
       <div class="post-meta">
-        <span class="tag tag-ad">Active Directory</span>
-        <span class="tag tag-tools">BloodHound</span>
-        <span class="meta-date">Aug 2026</span>
-        <span class="meta-read">8 min read</span>
+        <span class="tag tag-tools">Tools</span>
+        <span class="tag tag-tools">Recon</span>
+        <span class="meta-date">Jun 2026</span>
+        <span class="meta-read">10 min read</span>
       </div>
     </div>
 
-    <!-- GRID -->
     <div class="post-grid" id="post-grid">
 
-      <div class="post-card" data-cat="api" onclick="openArticle('jwt-attacks')">
-        <div class="card-severity sev-high">HIGH · JWT</div>
-        <h3>JWT Algorithm Confusion: From None to RCE</h3>
-        <p>Walkthrough of all 8 JWT attack classes — alg:none, weak secrets, header injection, kid traversal, and more. With Burp Suite payloads.</p>
-        <div class="post-meta">
-          <span class="tag tag-api">JWT</span>
-          <span class="meta-date">Jul 2026</span>
-        </div>
-      </div>
-
-      <div class="post-card" data-cat="web" onclick="openArticle('idor-methodology')">
-        <div class="card-severity sev-critical">CRITICAL · Web</div>
-        <h3>IDOR Hunting Methodology: Finding What Others Miss</h3>
-        <p>GUIDs don't save you. A systematic approach to finding IDOR across REST APIs, GraphQL endpoints, and multi-step workflows in banking applications.</p>
-        <div class="post-meta">
-          <span class="tag tag-web">Web App</span>
-          <span class="meta-date">Jul 2026</span>
-        </div>
-      </div>
-
-      <div class="post-card" data-cat="ad" onclick="openArticle('kerberoasting')">
+      <div class="post-card" data-cat="ad" onclick="openArticle('bloodhound-terminal')">
         <div class="card-severity sev-high">HIGH · Active Directory</div>
-        <h3>Kerberoasting in 2026: Still Relevant, Still Deadly</h3>
-        <p>Why Kerberoasting still works in hardened environments, how to identify roastable accounts with BloodHound, and crack SPN tickets with Hashcat.</p>
+        <h3>BloodHound Beyond the GUI: Terminal-First AD Attack Methodology</h3>
+        <p>The GUI is just a starting point. Here's how I query BloodHound directly from the terminal, pipe results into attack decisions, and move straight to exploitation without clicking through a graph.</p>
         <div class="post-meta">
           <span class="tag tag-ad">Active Directory</span>
-          <span class="meta-date">Jun 2026</span>
+          <span class="meta-date">Aug 2026</span>
         </div>
       </div>
 
-      <div class="post-card" data-cat="tools" onclick="openArticle('phantom-script')">
-        <div class="card-severity sev-info">TOOLS · Recon</div>
-        <h3>phantom.sh: My Custom Recon Framework Explained</h3>
-        <p>How I built phantom.sh and phantom_swarm.sh for automated single and multi-target recon — the design decisions, the workflow, and how I use it on real engagements.</p>
+      <div class="post-card" data-cat="web" onclick="openArticle('jwt-attacks')">
+        <div class="card-severity sev-high">HIGH · JWT</div>
+        <h3>JWT Algorithm Confusion: From None to RCE</h3>
+        <p>Walkthrough of all 8 JWT attack classes — alg:none, weak secrets, header injection, kid traversal, and more. With Burp Suite payloads ready to use.</p>
         <div class="post-meta">
-          <span class="tag tag-tools">Tools</span>
-          <span class="meta-date">Jun 2026</span>
-        </div>
-      </div>
-
-      <div class="post-card" data-cat="api" onclick="openArticle('graphql-recon')">
-        <div class="card-severity sev-medium">MED · API</div>
-        <h3>GraphQL Introspection Abuse & Batching Attacks</h3>
-        <p>Most developers leave introspection on in production. Here's how to extract the full schema, find hidden mutations, and abuse batching for rate limit bypass.</p>
-        <div class="post-meta">
-          <span class="tag tag-api">GraphQL</span>
-          <span class="meta-date">May 2026</span>
-        </div>
-      </div>
-
-      <div class="post-card" data-cat="research" onclick="openArticle('responsible-disclosure')">
-        <div class="card-severity sev-info">RESEARCH · CVE</div>
-        <h3>How I Approach Responsible Disclosure in 2026</h3>
-        <p>From finding the bug to writing the advisory and coordinating with maintainers — the process, the emails, the CVSS scoring, and what to do when vendors ghost you.</p>
-        <div class="post-meta">
-          <span class="tag tag-research">Research</span>
-          <span class="meta-date">May 2026</span>
+          <span class="tag tag-web">JWT</span>
+          <span class="meta-date">Jul 2026</span>
         </div>
       </div>
 
     </div>
 
-    <!-- TOOLS SECTION -->
     <div id="tools-section">
       <div class="section-header">
         <h2>Tools & Scripts</h2>
@@ -592,37 +350,23 @@
         <div class="tool-card">
           <div class="tool-header">
             <div class="tool-icon">👻</div>
-            <div>
-              <div class="tool-name">phantom.sh</div>
-            </div>
+            <div><div class="tool-name">phantom.sh</div></div>
           </div>
           <p class="tool-desc">Single-target automated recon — port scan, service fingerprint, attack surface map. Wraps Nmap, RustScan, httpx, and subfinder into one clean pipeline.</p>
         </div>
         <div class="tool-card">
           <div class="tool-header">
             <div class="tool-icon">🌀</div>
-            <div>
-              <div class="tool-name">phantom_swarm.sh</div>
-            </div>
+            <div><div class="tool-name">phantom_swarm.sh</div></div>
           </div>
-          <p class="tool-desc">Multi-target variant of phantom.sh — takes a host list and runs full enumeration in parallel. Built for internal network assessments.</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-header">
-            <div class="tool-icon">🤖</div>
-            <div>
-              <div class="tool-name">Pentest-Swarm-AI</div>
-            </div>
-          </div>
-          <p class="tool-desc">AI-assisted pentest agent that uses an LLM to suggest attack chains based on recon output. Experimental — built to speed up the thinking, not replace it.</p>
+          <p class="tool-desc">Multi-target variant — takes a host list and runs full enumeration in parallel. Built for internal network assessments with large scopes.</p>
         </div>
       </div>
     </div>
 
-    <!-- NEWSLETTER -->
     <div class="newsletter" id="about">
       <h3>Stay in the loop</h3>
-      <p>New write-ups on vulnerability research, AD attack paths, and real engagement findings — no spam, no fluff.</p>
+      <p>New write-ups on real engagement findings, AD attack chains, and tooling — no spam.</p>
       <div class="newsletter-form">
         <input type="email" placeholder="your@email.com" id="email-input">
         <button class="btn-sub" onclick="subscribe()">Subscribe</button>
@@ -632,7 +376,6 @@
   </div>
 </div>
 
-<!-- ── ARTICLE VIEW ── -->
 <div class="article-view" id="article-view">
   <div style="max-width:720px;margin:0 auto;padding:2rem 2rem 0;">
     <button class="back-btn" onclick="showHome()">← back to research</button>
@@ -654,107 +397,162 @@
 <script>
 const articles = {
   'phantom-script': {
-    title: 'phantom.sh: My Custom Recon Framework Explained',
+    title: 'phantom.sh — Automated Recon That Actually Works in Real Assessments',
     tags: ['Tools', 'Recon'],
     tagClasses: ['tag-tools', 'tag-tools'],
     date: 'Jun 2026',
-    read: '6 min read',
+    read: '10 min read',
     body: `
-      <p>Every penetration tester eventually gets tired of running the same tools in the same order across every engagement. That's when you start automating. <strong>phantom.sh</strong> is my answer to that problem — a Bash recon framework I use on real client work.</p>
+      <p>Every penetration tester eventually gets tired of running the same tools in the same order on every engagement. You nmap, you rustscan, you probe HTTP, you enumerate subdomains — and you do it manually, every time, for every target. <strong>phantom.sh</strong> is the solution to that. It's the recon framework I use on real client assessments, and it's changed how I approach the first hours of every engagement.</p>
 
-      <h2>The problem it solves</h2>
-      <p>On a typical engagement I need: fast port discovery, service fingerprinting, HTTP probing, subdomain enumeration, and a clean output structure I can actually use later in my report. Doing this manually for every target wastes 20-30 minutes of setup time. phantom.sh collapses that into a single command.</p>
+      <h2>Why I built it</h2>
+      <p>The problem isn't that individual tools are bad — Nmap, RustScan, httpx, subfinder are all excellent. The problem is orchestration. On a typical assessment I need fast port discovery, deep service fingerprinting, HTTP probing across all discovered ports, subdomain enumeration, and a clean output structure I can reference during exploitation and again during report writing. Doing that manually takes 20–30 minutes of setup per target. On an internal assessment with 50 hosts, that's an entire morning.</p>
+      <p>phantom.sh collapses the entire pipeline into a single command. You give it a target, it handles the rest.</p>
 
-      <h2>How it works</h2>
-      <p>The script takes a target (domain or IP) and runs a tiered scan pipeline:</p>
+      <h2>How the pipeline works</h2>
+      <p>The script runs a tiered recon pipeline against a single target:</p>
 
       <pre><code>./phantom.sh target.com
 
-[*] Phase 1 — Fast port discovery (RustScan)
-[*] Phase 2 — Service fingerprint (Nmap -sV -sC)
-[*] Phase 3 — HTTP probe (httpx)
-[*] Phase 4 — Subdomain enum (subfinder + amass)
-[*] Phase 5 — Report structure generated</code></pre>
+[*] Phase 1 — Fast port discovery      (RustScan — all 65535 ports)
+[*] Phase 2 — Deep service fingerprint (Nmap -sV -sC on discovered ports)
+[*] Phase 3 — HTTP probe               (httpx across all open ports)
+[*] Phase 4 — Subdomain enumeration    (subfinder + amass passive)
+[*] Phase 5 — Output structure created</code></pre>
+
+      <p>Each phase feeds the next. RustScan discovers open ports in seconds — then Nmap only runs service detection against those specific ports instead of scanning everything. This is dramatically faster than running Nmap across all ports with service detection enabled from the start.</p>
+
+      <h2>Output structure</h2>
+      <p>One of the most underrated parts of any recon tool is how it organizes output. During a live pentest you need to find things fast — you don't want to be grepping through flat files while a client is watching. phantom.sh generates a consistent directory structure for every target:</p>
+
+      <pre><code>target.com/
+├── recon/
+│   ├── ports/
+│   │   ├── rustscan.txt
+│   │   └── nmap_detailed.txt
+│   ├── http/
+│   │   └── httpx_results.txt
+│   └── subdomains/
+│       ├── subfinder.txt
+│       └── amass.txt
+└── notes.md</code></pre>
+
+      <p>Every engagement generates the same structure. After six months of using this, I can navigate any past assessment's recon output without thinking.</p>
 
       <h2>phantom_swarm.sh — multi-target mode</h2>
-      <p>For internal network assessments where you have a subnet or a list of hosts, phantom_swarm.sh takes a file and runs phantom logic in parallel across all targets. This is what I use when I'm handed a /22 and need to map the whole thing before the first client call.</p>
+      <p>For internal network assessments where the scope is a /22 subnet or a list of 50 hosts, phantom_swarm.sh takes over. It reads a host file and runs the phantom pipeline in parallel across all targets — with configurable concurrency so you don't saturate the network or the client's IDS.</p>
 
-      <pre><code># Give it a host list
+      <pre><code># Single file, one host per line
 ./phantom_swarm.sh hosts.txt
 
-# Processes in parallel, outputs per-host directories
-# Generates a consolidated summary table</code></pre>
+# With concurrency limit (default: 5 parallel)
+./phantom_swarm.sh hosts.txt --threads 3</code></pre>
 
-      <div class="callout">
-        <strong>For students:</strong> Build your own version of this. Start with a 10-line script that runs Nmap and saves output. Then add one feature at a time. The act of building it teaches you more than using mine ever would.
-      </div>
+      <p>The output is organized per-host, and once all targets complete, the script generates a consolidated summary table — open ports, detected services, and live HTTP endpoints across all hosts. That table becomes the starting point for deciding where to focus exploitation.</p>
+
+      <h2>How it changes a real assessment</h2>
+      <p>Before phantom.sh, the first hour of an internal assessment was manual enumeration. Now I run the swarm against the entire scope, let it work while I read through the engagement brief and take notes, and come back to a complete picture of the environment. I'm starting exploitation while other testers are still finishing their initial scans.</p>
+
+      <p>The output also directly feeds into report writing. The nmap detailed output maps to finding evidence. The httpx results identify which services need web application testing. The subdomain list expands the attack surface beyond what the client originally scoped.</p>
 
       <h2>What I learned building it</h2>
-      <p>The hardest part wasn't the scanning logic — it was output management. You need a consistent directory structure across engagements so you can find things during a live pentest without thinking. My current structure is: <code>target/recon/ports/</code>, <code>target/recon/http/</code>, <code>target/recon/subdomains/</code>.</p>
+      <p>The hardest part wasn't the scanning logic — it was output management and error handling. Two lessons that took time to learn:</p>
+      <ul>
+        <li><strong>Wrap every tool call with a timeout.</strong> Tools hang. Targets go offline mid-scan. Networks drop packets. A script that hangs silently on one host out of 50 will ruin your morning. Every external tool call in phantom.sh has an explicit timeout and a fallback.</li>
+        <li><strong>Consistent structure matters more than features.</strong> I've seen pentesters build elaborate recon scripts that output everything into a single directory with inconsistent filenames. After a week you can't find anything. The directory structure I settled on took several iterations, but now it's the part of the tool I'm most glad I got right.</li>
+      </ul>
 
-      <p>The second lesson: wrap every tool call with a timeout and a fallback. Tools hang, targets go offline, networks drop packets. A script that hangs silently on one host out of 50 will ruin your morning.</p>
+      <div class="callout">
+        <strong>For students:</strong> Build your own version. Start with a 10-line script that runs Nmap and saves output to a folder. Then add RustScan. Then add httpx. The act of building it teaches you more about the tools than any tutorial. By the time you have something that works, you'll understand exactly what each tool does and why the order matters.
+      </div>
 
-      <h2>Next steps</h2>
-      <p>I'm working on integrating Pentest-Swarm-AI into the pipeline so the output feeds directly into an LLM that suggests likely attack vectors based on what was discovered. That'll be a separate post.</p>
+      <h2>What a basic assessment looks like with phantom.sh</h2>
+      <p>Here's a realistic timeline of how phantom.sh changes an external assessment:</p>
+      <ul>
+        <li><strong>T+0:00</strong> — Run phantom.sh against all in-scope domains</li>
+        <li><strong>T+0:05</strong> — RustScan completes, ports discovered on all targets</li>
+        <li><strong>T+0:15</strong> — Nmap service fingerprinting complete, HTTP services identified</li>
+        <li><strong>T+0:20</strong> — httpx confirms live web apps, titles, status codes, tech stack hints</li>
+        <li><strong>T+0:25</strong> — Subdomain enumeration complete, expanded attack surface visible</li>
+        <li><strong>T+0:30</strong> — Full recon picture in hand, exploitation starts</li>
+      </ul>
+      <p>Without the script, that 30-minute recon phase is 90 minutes of manual work. The time saved compounds across every engagement.</p>
     `
   },
-  'bloodhound-101': {
-    title: 'BloodHound for Beginners: Mapping Active Directory Attack Paths',
+  'bloodhound-terminal': {
+    title: 'BloodHound Beyond the GUI: Terminal-First AD Attack Methodology',
     tags: ['Active Directory', 'BloodHound'],
-    tagClasses: ['tag-ad', 'tag-tools'],
+    tagClasses: ['tag-ad', 'tag-ad'],
     date: 'Aug 2026',
     read: '8 min read',
     body: `
-      <p>Active Directory is complex enough that even experienced sysadmins don't fully understand the permission chains inside their own environment. BloodHound makes those chains visible. It's one of the most powerful tools in an offensive operator's kit — and it's surprisingly beginner-friendly once you understand the mental model.</p>
+      <p>Most people learn BloodHound by opening the GUI, running the pre-built queries, and clicking through the graph. That's fine for learning — but in a real engagement, the GUI slows you down. Here's how I query BloodHound directly from the terminal and move straight to attacking without the visual overhead.</p>
 
-      <h2>What BloodHound actually does</h2>
-      <p>BloodHound ingests Active Directory data — users, groups, computers, GPOs, ACLs — and stores it as a graph in Neo4j. Then it runs pre-built Cypher queries to find attack paths. The classic question: <em>who can reach Domain Admin from a compromised standard user?</em></p>
-      <p>The answer is almost always: more people than the IT team thinks.</p>
+      <h2>Why terminal-first matters</h2>
+      <p>The BloodHound GUI is excellent for understanding relationships and explaining attack paths to clients. But when you're mid-engagement and you need to know which users are Kerberoastable and have a path to Domain Admin — you want that answer in 3 seconds, not after loading a graph, waiting for Neo4j to render 10,000 nodes, and clicking through menus.</p>
+      <p>Querying Neo4j directly from the terminal gives you that speed. The results come back as plain text you can immediately pipe into your attack tools.</p>
 
-      <h2>Setup in 5 minutes</h2>
-      <pre><code># Install BloodHound Community Edition
-sudo apt install bloodhound
+      <h2>Direct Cypher queries via terminal</h2>
+      <p>Neo4j exposes an HTTP API you can query with curl. Once BloodHound data is ingested, run queries directly:</p>
 
-# Start Neo4j
-sudo neo4j start
+      <pre><code>curl -s -u neo4j:neo4j \
+  -H "Content-Type: application/json" \
+  -d '{"statements":[{"statement":"MATCH (u:User) WHERE u.hasspn=true RETURN u.name, u.admincount"}]}' \
+  http://localhost:7474/db/data/transaction/commit | python3 -m json.tool</code></pre>
 
-# Open BloodHound
-bloodhound
+      <h2>The queries that matter</h2>
+      <p>These are the Cypher queries I run on every AD engagement, straight from the terminal:</p>
 
-# Default credentials: neo4j / neo4j (change immediately)</code></pre>
+      <pre><code># All Kerberoastable users
+MATCH (u:User) WHERE u.hasspn=true RETURN u.name, u.admincount ORDER BY u.admincount DESC
 
-      <h2>Collecting data with SharpHound</h2>
-      <p>SharpHound is the data collector. Run it from a domain-joined machine (or with valid domain credentials):</p>
-      <pre><code>./SharpHound.exe -c All --OutputDirectory C:\temp\bh
+# Kerberoastable users WITH path to Domain Admin
+MATCH (u:User {hasspn:true}),(g:Group {name:"DOMAIN ADMINS@DOMAIN.LOCAL"}),
+p=shortestPath((u)-[*1..]->(g)) RETURN u.name
 
-# Or with specific collection methods
-./SharpHound.exe -c DCOnly,Session --Loop --LoopDuration 02:00:00</code></pre>
+# Find users with DCSync rights
+MATCH (u)-[:MemberOf|GetChangesAll*1..]->(d:Domain) RETURN u.name
 
-      <div class="callout callout-warn">
-        <strong>OpSec note:</strong> SharpHound generates significant LDAP traffic. In a real engagement, use targeted collection methods and stagger your runs. Default --Loop creates obvious patterns in SIEM logs.
+# Computers where Domain Users can RDP
+MATCH (g:Group {name:"DOMAIN USERS@DOMAIN.LOCAL"})-[:CanRDP]->(c:Computer) RETURN c.name
+
+# All paths from owned users to DA
+MATCH (o:User {owned:true}),(d:Group {name:"DOMAIN ADMINS@DOMAIN.LOCAL"}),
+p=shortestPath((o)-[*1..]->(d)) RETURN p</code></pre>
+
+      <h2>Piping results directly into attacks</h2>
+      <p>The real power is chaining the output. Find Kerberoastable accounts from the terminal, pipe the names directly into GetUserSPNs:</p>
+
+      <pre><code># Get roastable usernames from BloodHound query, feed to impacket
+python3 GetUserSPNs.py domain/user:pass -dc-ip 10.10.10.1 \
+  -usersfile <(cypher-query "MATCH (u:User) WHERE u.hasspn=true RETURN u.name") \
+  -request -outputfile hashes.txt</code></pre>
+
+      <div class="callout">
+        <strong>The mindset shift:</strong> Stop thinking of BloodHound as a visualization tool. Think of it as a queryable database of every relationship in Active Directory. The GUI is just one way to read that database. The terminal is faster, scriptable, and directly feeds your attack chain.
       </div>
 
-      <h2>The queries that matter most</h2>
-      <p>Once your data is ingested, start with these:</p>
+      <h2>Setting up the terminal workflow</h2>
+      <p>A few things that make this workflow smooth:</p>
       <ul>
-        <li><strong>Shortest paths to Domain Admin</strong> — always run this first</li>
-        <li><strong>Find principals with DCSync rights</strong> — DS-Replication-Get-Changes-All</li>
-        <li><strong>Kerberoastable users with high value paths</strong> — filters for SPN accounts that can reach DA</li>
-        <li><strong>Find computers where Domain Users can RDP</strong> — often overlooked</li>
+        <li>Alias your Neo4j curl command so you can run Cypher queries with a short command</li>
+        <li>Save your most-used queries as a reference file — you'll run the same ones on every engagement</li>
+        <li>Mark nodes as owned as you compromise them — the "paths from owned to DA" query becomes your live attack roadmap</li>
+        <li>Use <code>--format csv</code> output when you want to feed results into other tools</li>
       </ul>
 
-      <h2>For students: lab setup</h2>
-      <p>Set up a free lab using GOAD (Game of Active Directory) — it's a Vagrant/Virtualbox setup that gives you a full multi-domain AD environment to practice against. Pair it with BloodHound and you have everything you need to learn without touching a client environment.</p>
+      <h2>For students</h2>
+      <p>Set up GOAD (Game of Active Directory) locally — it's a free multi-domain lab environment. Ingest it into BloodHound, then practice running every query from the terminal instead of the GUI. Force yourself to find the path to Domain Admin without clicking a single graph node. Once you can do that consistently, you understand the data model well enough to construct your own queries for whatever environment you're in.</p>
     `
   },
   'jwt-attacks': {
     title: 'JWT Algorithm Confusion: From None to RCE',
     tags: ['JWT', 'API Security'],
-    tagClasses: ['tag-api', 'tag-api'],
+    tagClasses: ['tag-web', 'tag-web'],
     date: 'Jul 2026',
     read: '10 min read',
     body: `
-      <p>JSON Web Tokens are everywhere — authentication, API authorization, session management. They're also regularly misconfigured in ways that let attackers forge arbitrary tokens. Here's a complete breakdown of the attack classes I test for on every engagement.</p>
+      <p>JSON Web Tokens are everywhere — authentication, API authorization, session management. They're also regularly misconfigured in ways that let attackers forge arbitrary tokens. Here's a complete breakdown of the attack classes I test for on every web application engagement.</p>
 
       <h2>Attack 1: alg:none</h2>
       <p>The oldest trick. Some libraries accept unsigned tokens if the algorithm is set to "none".</p>
@@ -764,201 +562,41 @@ bloodhound
 # Modified header
 {"alg":"none","typ":"JWT"}
 
-# Remove the signature entirely — just keep the trailing dot
+# Remove the signature — keep the trailing dot
 eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiIxMjM0In0.</code></pre>
 
       <h2>Attack 2: Algorithm Confusion (RS256 → HS256)</h2>
-      <p>When a server uses RS256 (asymmetric), the public key is often available. If the library is misconfigured, you can sign a token with HS256 using the public key as the HMAC secret.</p>
+      <p>When a server uses RS256, the public key is often discoverable. If the library is misconfigured, you can sign a token with HS256 using the public key as the HMAC secret.</p>
       <pre><code># Grab the public key from /jwks.json or /.well-known/
-# Sign a forged token with HS256 using the public key as the secret
+# Sign a forged token with HS256 using the public key as secret
 python3 jwt_tool.py TOKEN -X k -pk public_key.pem</code></pre>
-
-      <div class="callout">
-        <strong>For students:</strong> PortSwigger Web Security Academy has 8 JWT labs, all free. Complete them in order — they build on each other perfectly. This is the best structured practice available for JWT attacks.
-      </div>
 
       <h2>Attack 3: Weak secret brute-force</h2>
       <p>HS256 tokens signed with a weak or default secret can be cracked offline:</p>
-      <pre><code>hashcat -a 0 -m 16500 token.txt wordlists/rockyou.txt
+      <pre><code>hashcat -a 0 -m 16500 token.txt wordlists/rockyou.txt</code></pre>
 
-# Or with jwt-cracker
-jwt-cracker TOKEN wordlist.txt</code></pre>
-
-      <h2>Attack 4: kid (Key ID) path traversal</h2>
-      <p>If the <code>kid</code> header parameter is used to locate the signing key on the filesystem, it may be vulnerable to path traversal:</p>
-      <pre><code># Modified header
-{
-  "alg": "HS256",
-  "kid": "../../dev/null"
-}
-# Sign with empty string as secret — /dev/null returns empty bytes</code></pre>
+      <h2>Attack 4: kid path traversal</h2>
+      <p>If the <code>kid</code> header locates the signing key on the filesystem, it may be vulnerable:</p>
+      <pre><code>{"alg": "HS256", "kid": "../../dev/null"}
+# Sign with empty string — /dev/null returns empty bytes</code></pre>
 
       <h2>Attack 5: kid SQL injection</h2>
-      <p>If the <code>kid</code> is used in a SQL query to retrieve the key, it may be injectable:</p>
+      <p>If <code>kid</code> is used in a SQL query to retrieve the key:</p>
       <pre><code>{"kid": "x' UNION SELECT 'mysecret'-- -"}
-# Now sign the token with 'mysecret' as the HMAC secret</code></pre>
+# Sign the token with 'mysecret' as the HMAC secret</code></pre>
+
+      <div class="callout">
+        <strong>For students:</strong> PortSwigger Web Security Academy has 8 free JWT labs. Complete them in order — they build on each other and cover every class listed here with hands-on practice.
+      </div>
 
       <h2>What to always check</h2>
       <ul>
         <li>Is there a <code>/jwks.json</code> or <code>/.well-known/openid-configuration</code> endpoint?</li>
         <li>Does the token accept algorithm changes?</li>
         <li>Can you inject a JWK directly into the header?</li>
-        <li>Is the <code>exp</code> claim actually validated?</li>
-        <li>Does the server accept tokens signed with a different algorithm?</li>
+        <li>Is the <code>exp</code> claim actually validated server-side?</li>
+        <li>Are there any default or predictable secrets in use?</li>
       </ul>
-    `
-  },
-  'idor-methodology': {
-    title: 'IDOR Hunting Methodology: Finding What Others Miss',
-    tags: ['Web App', 'IDOR'],
-    tagClasses: ['tag-web', 'tag-web'],
-    date: 'Jul 2026',
-    read: '7 min read',
-    body: `
-      <p>IDOR (Insecure Direct Object Reference) is consistently one of the most impactful findings in web application assessments, especially in banking and fintech. It's also one of the most commonly missed because testers look for it in obvious places and stop. Here's my actual methodology.</p>
-
-      <h2>Step 1: Map all identifiers</h2>
-      <p>Before testing, catalogue every object reference in the application — account IDs, transaction IDs, document IDs, user references. Pay attention to:</p>
-      <ul>
-        <li>Sequential integers — easiest to test, still common</li>
-        <li>GUIDs — harder but not immune</li>
-        <li>Encoded values — base64, hashed IDs, obfuscated references</li>
-        <li>References in request bodies, headers, and cookies</li>
-      </ul>
-
-      <h2>Step 2: Map all user roles</h2>
-      <p>Create at least two accounts at different privilege levels. Often you need: standard user, premium user, admin. The most interesting IDORs are horizontal (user A accessing user B's data) not vertical.</p>
-
-      <h2>Step 3: Multi-step workflow IDORs</h2>
-      <p>This is where most testers miss findings. Many applications validate authorization at step 1 but not at steps 2, 3, or 4 of a workflow.</p>
-      <pre><code># Example: document approval workflow
-POST /api/documents/submit     # Checks ownership ✓
-POST /api/documents/review     # Checks ownership ✓  
-POST /api/documents/approve    # Forgets to check ✗ ← IDOR here</code></pre>
-
-      <div class="callout">
-        <strong>Banking sector note:</strong> The most critical IDORs I've found in banking involve transaction references and account statement endpoints — places where the business logic is complex and developers focus on functionality over authorization.
-      </div>
-
-      <h2>Step 4: GUIDs are not security</h2>
-      <p>If you can trigger a system to send you a GUID (in an email, notification, or API response), test if that GUID works across different user sessions. Predictable GUIDs (UUID v1) can sometimes be brute-forced if you have a seed value.</p>
-
-      <h2>Step 5: Look at state-changing operations</h2>
-      <p>Read-only IDORs are impactful but write IDORs are critical. Test PATCH, PUT, DELETE operations — often these have weaker authorization than GET.</p>
-    `
-  },
-  'kerberoasting': {
-    title: 'Kerberoasting in 2026: Still Relevant, Still Deadly',
-    tags: ['Active Directory', 'Kerberoasting'],
-    tagClasses: ['tag-ad', 'tag-ad'],
-    date: 'Jun 2026',
-    read: '6 min read',
-    body: `
-      <p>Every few years someone publishes a "Kerberoasting is dead" post. They're wrong. As long as organizations run service accounts with weak passwords and SPNs, Kerberoasting remains one of the cleanest paths to privilege escalation in Active Directory environments.</p>
-
-      <h2>How it works — the short version</h2>
-      <p>Any domain user can request a Kerberos service ticket for any SPN (Service Principal Name). That ticket is encrypted with the service account's NTLM hash. Offline, you can crack it.</p>
-
-      <pre><code># Request all service tickets
-GetUserSPNs.py domain/user:password -dc-ip 10.10.10.1 -request
-
-# Or with Rubeus (from Windows)
-Rubeus.exe kerberoast /format:hashcat /outfile:hashes.txt</code></pre>
-
-      <h2>Finding high-value targets with BloodHound</h2>
-      <p>Not all roastable accounts are equal. Use BloodHound's pre-built query: <em>"List all Kerberoastable users with a path to Domain Admin"</em>. This filters the noise and shows you which accounts to prioritize.</p>
-
-      <h2>Cracking the tickets</h2>
-      <pre><code>hashcat -a 0 -m 13100 hashes.txt /usr/share/wordlists/rockyou.txt
-
-# With rules for better coverage
-hashcat -a 0 -m 13100 hashes.txt rockyou.txt -r OneRuleToRuleThemAll.rule</code></pre>
-
-      <div class="callout callout-warn">
-        <strong>Detection note:</strong> Modern EDR and SIEM solutions flag bulk SPN requests. On real engagements, request tickets for one or two high-value targets only, not all SPNs at once.
-      </div>
-
-      <h2>Defenses (for students studying blue team too)</h2>
-      <ul>
-        <li>Use Group Managed Service Accounts (gMSA) — auto-rotating 120+ character passwords</li>
-        <li>Enable AES-only encryption for service accounts — makes cracking infeasible</li>
-        <li>Monitor for Event ID 4769 with ticket encryption type 0x17 (RC4)</li>
-      </ul>
-    `
-  },
-  'graphql-recon': {
-    title: 'GraphQL Introspection Abuse & Batching Attacks',
-    tags: ['GraphQL', 'API Security'],
-    tagClasses: ['tag-api', 'tag-api'],
-    date: 'May 2026',
-    read: '5 min read',
-    body: `
-      <p>GraphQL is increasingly common in modern web applications and APIs — especially in fintech and SaaS. It's also consistently misconfigured. Here's what I look for on every GraphQL assessment.</p>
-
-      <h2>Step 1: Introspection</h2>
-      <p>Introspection lets any client query the full schema — every type, field, query, and mutation. In production, it should be disabled. It usually isn't.</p>
-
-      <pre><code>{
-  __schema {
-    types {
-      name
-      fields {
-        name
-        type { name kind }
-      }
-    }
-  }
-}</code></pre>
-
-      <p>Use <strong>InQL</strong> (Burp extension) or <strong>GraphQL Voyager</strong> to visualize the schema automatically. This saves hours of manual enumeration.</p>
-
-      <h2>Step 2: Find hidden mutations</h2>
-      <p>Developers sometimes add administrative mutations but "hide" them by not documenting them. Introspection exposes everything. Look for mutations like <code>updateUserRole</code>, <code>deleteAccount</code>, <code>resetPassword</code> that shouldn't be accessible to regular users.</p>
-
-      <h2>Step 3: Batching for rate limit bypass</h2>
-      <p>GraphQL supports sending multiple operations in one HTTP request. This bypasses rate limiting controls that count requests rather than operations:</p>
-
-      <pre><code>[
-  {"query": "mutation { login(user:'admin', pass:'pass1') { token } }"},
-  {"query": "mutation { login(user:'admin', pass:'pass2') { token } }"},
-  {"query": "mutation { login(user:'admin', pass:'pass3') { token } }"}
-]</code></pre>
-
-      <div class="callout">
-        <strong>For students:</strong> DVGA (Damn Vulnerable GraphQL Application) is your practice target. It's Dockerized and covers every major GraphQL vulnerability class. Set it up locally and work through it systematically.
-      </div>
-    `
-  },
-  'responsible-disclosure': {
-    title: 'How I Approach Responsible Disclosure in 2026',
-    tags: ['Research', 'CVE'],
-    tagClasses: ['tag-research', 'tag-research'],
-    date: 'May 2026',
-    read: '5 min read',
-    body: `
-      <p>Responsible disclosure is one of the most important practices in security research — and one of the least discussed in practical terms. Here's how I actually do it, from finding the bug to coordinated release.</p>
-
-      <h2>Step 1: Document everything before contacting</h2>
-      <p>Before reaching out to any vendor, fully document the vulnerability: reproduction steps, affected versions, CVSS score, impact analysis, and a suggested remediation. This does two things: it shows professionalism, and it protects you if a vendor later claims the bug was reported differently.</p>
-
-      <h2>Step 2: Find the right contact</h2>
-      <p>Most serious open-source projects have a <code>SECURITY.md</code> file or a <code>security@</code> email. If not, check GitHub for a private vulnerability reporting option (enabled by the repo owner). Never open a public issue for a security vulnerability.</p>
-
-      <h2>Step 3: The initial email</h2>
-      <p>Keep it short and professional. Include: the vulnerability type, affected versions, a one-paragraph summary of impact, and a statement that you're coordinating disclosure and will give them 90 days before publishing.</p>
-
-      <h2>Step 4: When vendors go quiet</h2>
-      <p>Follow up at 30 days with a polite reminder. At 60 days, a firmer message stating your timeline. At 90 days, publish with or without a patch — but always note in your write-up whether the vendor was unresponsive and whether the vulnerability is patched.</p>
-
-      <div class="callout callout-warn">
-        <strong>Know your jurisdiction:</strong> Laws around security research vary significantly by country. Understand what constitutes authorized vs unauthorized access in your region before testing anything you don't own or have explicit permission to test.
-      </div>
-
-      <h2>CVSS scoring</h2>
-      <p>Learn to score your own findings with CVSS 3.1. It forces you to think precisely about attack vector, complexity, privileges required, and impact. Use the NVD calculator — it's free and produces a score you can cite in your advisory.</p>
-
-      <h2>For students</h2>
-      <p>Start with bug bounty platforms (HackerOne, Bugcrowd, Intigriti) before doing independent research. They handle the legal and coordination overhead for you, and you get paid. Once you have experience with that process, independent CVE research is a natural next step.</p>
     `
   }
 };
@@ -966,21 +604,15 @@ hashcat -a 0 -m 13100 hashes.txt rockyou.txt -r OneRuleToRuleThemAll.rule</code>
 function openArticle(id) {
   const art = articles[id];
   if (!art) return;
-
   document.getElementById('home-view').style.display = 'none';
   const view = document.getElementById('article-view');
   view.classList.add('active');
-
-  const metaHTML = art.tags.map((t, i) =>
-    `<span class="tag ${art.tagClasses[i]}">${t}</span>`
-  ).join('');
-
+  const metaHTML = art.tags.map((t,i) => `<span class="tag ${art.tagClasses[i]}">${t}</span>`).join('');
   document.getElementById('article-title').textContent = art.title;
   document.getElementById('article-meta').innerHTML = metaHTML;
   document.getElementById('article-submeta').innerHTML =
-    `<span class="meta-date" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)">${art.date}</span><span style="font-size:12px;color:var(--muted);margin-left:8px">${art.read}</span>`;
+    `<span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)">${art.date}</span><span style="font-size:12px;color:var(--muted);margin-left:8px">${art.read}</span>`;
   document.getElementById('article-body').innerHTML = art.body;
-
   window.scrollTo(0, 0);
 }
 
@@ -993,27 +625,18 @@ function showHome() {
 function filterPosts(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-
-  const cards = document.querySelectorAll('.post-card');
-  cards.forEach(card => {
-    const c = card.getAttribute('data-cat');
-    card.style.display = (cat === 'all' || c === cat) ? 'flex' : 'none';
+  document.querySelectorAll('.post-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.getAttribute('data-cat') === cat) ? 'flex' : 'none';
   });
-
   const featured = document.querySelector('.featured-post');
-  const fc = featured.getAttribute('data-cat');
-  featured.style.display = (cat === 'all' || fc === cat) ? 'block' : 'none';
+  featured.style.display = (cat === 'all' || featured.getAttribute('data-cat') === cat) ? 'block' : 'none';
 }
 
 function subscribe() {
   const email = document.getElementById('email-input').value.trim();
-  if (!email || !email.includes('@')) {
-    document.getElementById('email-input').style.borderColor = 'var(--accent3)';
-    return;
-  }
+  if (!email || !email.includes('@')) { document.getElementById('email-input').style.borderColor = 'var(--accent3)'; return; }
   document.getElementById('email-input').style.borderColor = 'var(--accent)';
-  document.querySelector('.newsletter-form').innerHTML =
-    '<p style="color:var(--accent);font-family:\'JetBrains Mono\',monospace;font-size:13px;">✓ subscribed — first post incoming.</p>';
+  document.querySelector('.newsletter-form').innerHTML = '<p style="color:var(--accent);font-family:\'JetBrains Mono\',monospace;font-size:13px;">✓ subscribed — first post incoming.</p>';
 }
 </script>
 </body>
